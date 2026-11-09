@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@styles/app.css"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="kelas.controller.FormController">
+
+    <top>
+        <HBox spacing="16" styleClass="header">
+            <Label prefHeight="30.0"
+                   prefWidth="178.0"
+                   styleClass="title"
+                   text="Daftar Produk" />
+
+            <Button onAction="#bukaDaftar"
+                    text="Lihat Daftar" />
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true">
+            <content>
+                <VBox spacing="16" styleClass="page">
+                    <VBox spacing="12" styleClass="card">
+
+                        <Label styleClass="subtitle"
+                               text="Tambah Produk Baru"
+                               textFill="#302a2a" />
+
+                        <Label text="Nama Produk" />
+                        <TextField fx:id="namaField"
+                                   promptText="contohfield" />
+
+                        <Label text="Kategori" />
+                        <ComboBox fx:id="kategoriBox"
+                                  maxWidth="Infinity" />
+
+                        <Label styleClass="muted"
+                               text="Kategori Box"
+                               wrapText="true" />
+
+                        <Label text="Harga Produk" />
+                        <TextField fx:id="hargaField"
+                                   promptText="hargafield" />
+
+                        <ImageView fx:id="gambarView"
+                                   fitHeight="160"
+                                   fitWidth="280"
+                                   preserveRatio="true" />
+
+                        <Button maxWidth="Infinity"
+                                onAction="#simpan"
+                                styleClass="button-primary"
+                                text="Simpan Produk" />
+
+                        <Label fx:id="pesanLabel"
+                               styleClass="error"
+                               wrapText="true" />
+
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
